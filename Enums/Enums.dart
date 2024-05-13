@@ -4,6 +4,8 @@ void main() {
   
   print(emp1.department); // Output: EmployeeDepartment.SWE
   print(emp2.department); // Output: EmployeeDepartment.MARKETING
+
+  print(emp1.department.salary); // Output : 20000000
 }
 
 class Employee {
@@ -13,8 +15,20 @@ class Employee {
   Employee(this.name, this.department);
 }
 
+// enum EmployeeDepartment {
+//   SWE, // 
+//   FINANCE,
+//   MARKETING
+// }
+
+
+
 enum EmployeeDepartment {
-  SWE, // Software Engineering
-  FINANCE,
-  MARKETING
+  SWE(20000000),
+  MARKETING(15000000);
+  
+  // Only final values can be declared in the enum
+  final int salary;
+  // constructor of enum 
+  const EmployeeDepartment(this.salary);
 }
