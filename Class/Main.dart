@@ -1,39 +1,37 @@
 void main() {
+  // Creating a Cookie object with a specific shape and size
+  Cookie cookie = Cookie("Circle", 15.2);
 
-  Cookie cookie = new Cookie("Circle", 15.2);
-  // Calling getter
-  print(cookie.height);
-  // using setter
-  cookie._height = 15;
- // calling setter to check the changed value
-  print(cookie.height);
+  // Accessing the height using the getter method
+  print("Original height: ${cookie.height}");
 
+  // Using the setter method to change the height
+  cookie.height = 15;
+
+  // Accessing the height again after it has been changed
+  print("Updated height: ${cookie.height}");
 }
 
 class Cookie {
-  
   String shape;
   double size;
 
-  //Constructor
+  // Constructor with shape and size parameters
   Cookie(this.shape, this.size) {
-    print("Constructor is called");
+    print("Cookie constructor is called");
   }
 
-  // Declaring private variables with ('_' before the name). And private variables can be accessed within a same file over here in main;
+  // Declaring a private variable for height using the underscore prefix
   int _height = 0;
-  
-  // Getter
-  int get height { 
+
+  // Getter method to retrieve the height
+  int get height {
     return _height;
   }
 
- //Setter 
+  // Setter method to set the height
   set height(int h) {
     _height = h;
   }
-  // Getter and setter can have a same name
-
-
-
+  // Note: The getter and setter methods can have the same name.
 }
