@@ -1,27 +1,40 @@
 void main() {
+  // Creating instances of BMW and Audi
+  BMW bmw = BMW();
+  Audi audi = Audi();
 
+  // Calling printInfo method for both BMW and Audi
+  bmw.printInfo();
+  audi.printInfo();
 }
 
+// Abstract class representing a Vehicle
 abstract class Vehicle {
+  // Default number of wheels for a vehicle
   int numberOfWheels = 0;
+
+  // Abstract method to print information about the vehicle
   void printInfo();
 }
 
-// by using implement we have to override both the variable and the functions
+// BMW class implementing the Vehicle interface
 class BMW implements Vehicle {
+  // Overriding the numberOfWheels variable
   @override
   int numberOfWheels = 4;
 
+  // Implementing the printInfo method
   @override
   void printInfo() {
-    print("BMW");
+    print("This is a BMW.");
   }
 }
-// by using extens we can just override functions while using the previously defined variables
+
+// Audi class extending the Vehicle class
 class Audi extends Vehicle {
+  // Overriding the printInfo method
   @override
   void printInfo() {
-    print("Audi");
+    print("This is an Audi.");
   }
-  
 }
