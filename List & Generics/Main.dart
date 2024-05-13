@@ -22,6 +22,7 @@ class Name<String> {
   String name;
   Name(this.name);
 }
+
 class Example<T> {
   T example;
   Example(this.example);
